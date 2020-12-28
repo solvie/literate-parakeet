@@ -1,0 +1,23 @@
+{
+  "name": "literate-parakeet",
+  "version": "1.0.0",
+  "description": "backend api for silver carnival",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solvie/literate-parakeet.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solvie/literate-parakeet/issues"
+  },
+  "homepage": "https://github.com/solvie/literate-parakeet#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.19.1",
+    "express": "^4.17.1"
+  }
+}

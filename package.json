@@ -21,6 +21,8 @@
   "homepage": "https://github.com/solvie/literate-parakeet#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0",
     "typescript": "^4.1.3"
   },
   "devDependencies": {

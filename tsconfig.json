@@ -13,9 +13,11 @@
             "*": [
                 "node_modules/*"
             ]
-        }
+        },
+        "types": ["mocha", "node", "express"]
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "tests/**/*"
     ]
 }

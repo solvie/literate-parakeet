@@ -1,9 +1,8 @@
 import App from './app';
 import express from 'express';
 
-const expressApp = express();
-
-const app = new App(expressApp);
-
+const app = new App(express());
 app.setupRoutes();
 app.start();
+
+export default app.expressApp;

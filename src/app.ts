@@ -1,21 +1,21 @@
-import express from 'express';
 import { GraphQLRoute } from './routes/graphql-route';
 import { BasicRoutes } from './routes/basic-routes';
+import express from 'express';
 
 export default class App {
-    app : express.Application;
+    expressApp : express.Application;
 
     constructor(expressApp: express.Application){
-        this.app = expressApp;
+        this.expressApp = expressApp;
     }
 
     setupRoutes(){
-        GraphQLRoute.map(this.app);
-        BasicRoutes.map(this.app);
+        GraphQLRoute.map(this.expressApp);
+        BasicRoutes.map(this.expressApp);
     }
 
     start(){
-        this.app.listen({ port: 4000 }, () =>
+        this.expressApp.listen({ port: 4000 }, () =>
         // tslint:disable-next-line:no-console
         console.log('Now browse to http://localhost:4000' )
       );

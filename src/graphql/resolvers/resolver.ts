@@ -1,2 +1,2 @@
-const resolver = { hello: () => 'Hello world!' };
-export default resolver
+const resolver = { hello: () => "Hello world!" };
+export default resolver;

@@ -1,24 +1,23 @@
 import * as express from 'express';
 import { graphqlHTTP } from 'express-graphql';
-import { buildSchema } from 'graphql';
-
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
-
-const root = { hello: () => 'Hello world!' };
+import { GraphQLSchema } from 'graphql'
 
 export class GraphQLRoute {
-    static map(app: express.Application): void {
+  schema: GraphQLSchema;
+  rootResolver: Record<string, unknown>;
 
-        app.use('/graphql', (req: express.Request, res: express.Response) => {
-            graphqlHTTP({
-                schema,
-                rootValue: root,
-                graphiql: true,
-              })(req, res);
-        });
-    }
+  public buildContext({graphqlSchema, rootResolver}:{ graphqlSchema: GraphQLSchema, rootResolver: Record<string, unknown> }) : void{
+    this.schema = graphqlSchema;
+    this.rootResolver = rootResolver;
+  }
+
+  map(app: express.Application): void {
+      app.use('/graphql', (req: express.Request, res: express.Response) => {
+          graphqlHTTP({
+              schema: this.schema,
+              rootValue: this.rootResolver,
+              graphiql: true,
+            })(req, res);
+      });
+  }
 }

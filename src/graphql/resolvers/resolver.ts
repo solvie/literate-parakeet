@@ -1,2 +1,2 @@
-const resolver = { hello: () => "Hello world!" };
+const resolver: Record<string, unknown> = { hello: () => "Hello world!" };
 export default resolver;
